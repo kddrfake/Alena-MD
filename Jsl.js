@@ -2026,7 +2026,6 @@ break
 │𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
 │𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
 ╰───────────────┈⬡`,
-                    footer: Jsl.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
