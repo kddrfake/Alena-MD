@@ -1,4 +1,4 @@
-* [`FORCK  GIT`](https://github.com/Afx-Abu/Alena-MD/forck)
+* [`FORCK  GIT`](https://github.com/Afx-Abu/Alena-MD/fork)
 
 * [`ALENA QR SCANNER`](https://replit.com/@Afx-Abu/ABU-MD-QR?outputonly=1&lite=1)
 
