@@ -1327,7 +1327,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
-            case 'reactxxx': {
+            case 'react': {
                 if (!isCreator) return replay(`${mess.owner}`)
                 reactionMessage = {
                     react: {
@@ -1781,7 +1781,7 @@ break
                  Jsl.sendTextWithMentions(m.chat, teks, m)
              }
              break
-             case 'listonlinexxx': case 'onlinelistxxx': {
+             case 'listonline': case 'onlinelist': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
                     Jsl.sendText(m.chat, 'ᴏɴʟɪɴᴇ ᴍᴇʙᴇʀs ʟɪsᴛ:\n\n' + online.map(v => '𒆜 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
@@ -1925,7 +1925,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'imagenobgxxx': case 'removebgxxx': case 'remove-bgxxx': {
+            case 'imagenobg': case 'removebg': case 'remove-bg': {
 	    if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
@@ -1998,20 +1998,11 @@ break
         })
         }
         break
-	    case 'play': case 'song': case 'ytplay': {
-                if (!text) return reply(`Example : ${prefix + command} Stay`)
+case 'play': case 'song': {
+                if (!text) throw `Example : ${prefix + command} look at me`
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    templateButtons: templateButtons = [
-                        {index: 1, urlButton: {displayText: 'ᴄʜᴀɴɴᴇʟ', url: anu.author.url}},
-                        {index: 2, urlButton: {displayText: 'ᴘʟᴀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ', url: anu.url}},
-                        {index: 3, quickReplyButton: {displayText: '🎧 ᴀᴜᴅɪᴏ 🎧', id:`ytmp3 ${anu.url}` }},
-                        {index: 4, quickReplyButton: {displayText: '📽 ᴠɪᴅᴇᴏ 📽', id:`ytmp4 ${anu.url}` }},
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
+                    ngen = `
                     caption: `
 ╭───────────────┈⬡
 │𒆜 ᴛɪᴛᴇʟ : ${anu.title}
@@ -2025,11 +2016,37 @@ break
 │𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
 │𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
 ╰───────────────┈⬡`,
-                    footer: Jsl.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                Jsl.sendMessage(m.chat, buttonMessage, { quoted: m })
+message = await prepareWAMessageMedia({ image : { url: search.videos[0].thumbnail } }, { upload:   Turbo.waUploadToServer })
+                template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: ngen,
+                            hydratedFooterText: `${global.botnma}`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'ᴄʜᴀɴɴᴇʟ',
+                                    url: ${anu.author.url}`
+                                }
+                            }, {
+                            urlButton: {
+                                    displayText: 'ᴘʟᴀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ',
+                                    url: `${anu.url}`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: '🎧 ᴀᴜᴅɪᴏ 🎧',
+                                    id: `ytmp3 ${search.videos[0].url} 320kbps`
+                                    }
+                                },{quickReplyButton: {
+                                    displayText: '📽 ᴠɪᴅᴇᴏ 📽',
+                                    id: `ytmp4 ${search.videos[0].url} 360p`
+                                     }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                  Turbo.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
 	    case 'ytmp3': case 'ytaudio':{
@@ -2066,7 +2083,7 @@ break
                 Jsl.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜 Title : ${media.title}\n𒆜 File Size : ${media.filesizeF}\n𒆜 Url : ${isUrl(text)}\n𒆜 Ext : MP3\n𒆜 Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
-	    case 'getmusicxxx': {
+	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
 		let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 let quality = args[1] ? args[1] : '128kbps'
@@ -2115,7 +2132,7 @@ case 'webtonsearch': case 'webtoon':
                     reply(mess.error)
                 })
             break
-            case 'drakorxxx':
+            case 'drakor':
                 if (!text) return reply('What Are You Looking For??')
                 await reply(mess.wait)
                 jslabu.Drakor(`${text}`).then(async data => {
@@ -2132,7 +2149,7 @@ case 'webtonsearch': case 'webtoon':
                     reply(mess.error)
                 })
             break
-            case 'animexxx':{
+            case 'anime':{
                 if (!text) return reply(`What Anime Are You Looking For??`)
                 await reply(mess.wait)
                 jslabu.Anime(q).then(async data => {
@@ -2157,7 +2174,7 @@ case 'webtonsearch': case 'webtoon':
                 })
                 }
             break
-            case 'characterxxx': case 'karakterxxx':
+            case 'character': case 'karakter':
                 if (!text) return reply(`What Anime Character Are You Looking For??`)
                 await reply(mess.wait)
                 jslabu.Character(q).then(async data => {
@@ -2796,7 +2813,7 @@ case 'webtonsearch': case 'webtoon':
 		Jsl.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
-		case 'iqraxxx': {
+		case 'iqra': {
 		oh = `Example : ${prefix + command} 3\n\nIQRA Which Is Available : 1,2,3,4,5,6`
 		if (!text) return reply(oh)
 		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
@@ -2823,7 +2840,7 @@ Available Formats: pdf, docx, pptx, xlsx`)
 		}
 		}
 		break
-		case 'hadisxxx': case 'hadistxxx': {
+		case 'hadis': case 'hadist': {
 		if (!args[0]) return reply(`Example:
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
@@ -2859,7 +2876,7 @@ ${id}`)
 		}
 		}
 		break
-		case 'alquranxxx': {
+		case 'alquran': {
 		if (!args[0]) return reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
 		if (!args[1]) return reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -2872,7 +2889,7 @@ ${id}`)
 		Jsl.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
 		}
 		break
-		case 'tafsirsurahxxx': {
+		case 'tafsirsurah': {
 		if (!args[0]) return reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
 		if (!args[1]) return reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -3213,7 +3230,7 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 					Jsl.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case "setmenuxxx": 
+case "setmenu": 
 if (!text) return reply("1. image\n2. list\n3. catalog\n\nExample .setmenu image")
 if (q == "image") {
 typemenu = 'image'
