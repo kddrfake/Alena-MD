@@ -2004,7 +2004,7 @@ break
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 let buttons = [
-                    footer: conn.user.name,
+                    footer: Jsl.user.name,
                     templateButtons: templateButtons = [
                         {index: 1, urlButton: {displayText: 'ᴄʜᴀɴɴᴇʟ', url: anu.author.url}},
                         {index: 2, urlButton: {displayText: 'ᴘʟᴀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ', url: anu.url}},
@@ -2077,7 +2077,7 @@ break
                 Jsl.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
-            case 'getvideoxxx': {
+            case 'getvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) throw 'Reply Message'
