@@ -1804,17 +1804,17 @@ break
                 }
             }
             break
-            case 'take': {
+            case 'sticker': case 's': case 'stickergif': case 'sgif': {
             if (!quoted) return replay(`Reply Video/Image With Caption ${prefix + command}`)
             reply(mess.wait)
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
-                let encmedia = await Jsl.sendImageAsSticker(m.chat, media, m, { packname: ${text })
+                let encmedia = await Jsl.sendImageAsSticker(m.chat, media, m, { packname: text })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
-                if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
+                if ((quoted.msg || quoted).seconds > 11) return reply('*Maximum 10 Seconds*!')
                 let media = await quoted.download()
-                let encmedia = await Jsl.sendVideoAsSticker(m.chat, media, m, { packname: ${text })
+                let encmedia = await Jsl.sendVideoAsSticker(m.chat, media, m, { packname: text })
                 await fs.unlinkSync(encmedia)
             } else {
                 reply(`sᴇɴᴅ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ ${prefix + command}`)
@@ -1850,7 +1850,7 @@ break
             reply(db)
         }
         break
-            case 'emomix': {
+            case 'emojmix': {
 	        if (!text) return replay(`Example : ${prefix + command} 😅+🤔`)
 		let [emoji1, emoji2] = text.split`+`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
