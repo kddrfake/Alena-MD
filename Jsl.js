@@ -1804,7 +1804,7 @@ break
                 }
             }
             break
-            case 'sticker': case 's': case 'stickergif': case 'sgif': {
+            case 'take': {
             if (!quoted) return replay(`Reply Video/Image With Caption ${prefix + command}`)
             reply(mess.wait)
                     if (/image/.test(mime)) {
