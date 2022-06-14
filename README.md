@@ -7,4 +7,4 @@
 
 *EDIT SETTINGS*
 
-* [`ALL EDITING SETINGS`](https//github.com/Afx-Abu/Alena-MD/edit/Jsl-Beta/settings.js)
+* [`ALL EDITING SETINGS`](https://github.com/Afx-Abu/Alena-MD/blob/Jsl-Beta/settings.js)
