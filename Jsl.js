@@ -204,7 +204,7 @@ module.exports = Jsl = async (Jsl, m, chatUpdate, store) => {
             console.error(err)
         }
 	
-	//group target by xeon\\
+	//group target by jsl\\
 const reply = (teks) => {
             Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ${global.caption}`,"previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/Alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
@@ -261,7 +261,7 @@ const reply = (teks) => {
         }
         }
 
-        //auto reply by xeon 🦄
+        //auto reply by jsl 🦄
         for (let anji of setik){
 				if (budy === anji){
 					result = fs.readFileSync(`./media/sticker/${anji}.webp`)
@@ -292,7 +292,7 @@ const reply = (teks) => {
       return
       }
         
-        //media detect by 🦄xeon\\
+        //media detect by 🦄jsl\\
 		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 		const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 		const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
@@ -1034,7 +1034,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
-            case 'find': {
+            case 'finhd': {
                 if (!text) return replay(`Example : ${prefix + command} song\n\nOption : \n1. find\n2. picture (indo)\n3. word\n4. sentence\n5. lyrics (indo)\n6. blank (indo)`)
                 if (args[0] === "song") {
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions`)
@@ -1201,14 +1201,14 @@ Jsl.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
 
 					break
   case 'handsomecheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @jsl`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 Jsl.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 
 					break
 case 'beautifulcheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @jsl`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 Jsl.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
@@ -1224,16 +1224,16 @@ case 'awesomecheck':
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @jsl`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 Jsl.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
 					case 'charactercheck':
-					//𝙸𝙽𝚂𝚃𝙰 🔖 by xeon⛔\\
-					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
-					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
-					const taky = xeony[Math.floor(Math.random() * xeony.length)]
+					//𝙸𝙽𝚂𝚃𝙰 🔖 by jsl⛔\\
+					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @jsl`)
+					const jsly =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+					const taky = jsly[Math.floor(Math.random() * jsly.length)]
 					Jsl.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
                     case 'stupid':
@@ -1317,7 +1317,7 @@ case 'wangy':
              reply(awikwok)
               break
 case 'checkdeath':
-             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} Xeon`)
+             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} jsl`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break
@@ -1766,7 +1766,7 @@ break
                  let teks = `⬣ *ᴘᴇʀsᴏɴᴀʟ ᴄʜᴀᴛ ʟɪsᴛ*\n\nᴛᴏᴛᴀʟ ᴄʜᴀᴛ : ${anu.length} ᴄʜᴀᴛ\n\n`
                  for (let i of anu) {
                      let nama = store.messages[i].array[0].pushName
-                     teks += `🐕 *ɴᴀᴍᴇ :* ${nama}\n🐕 *ᴜsᴇʀ :* @${i.split('@')[0]}\n🐕 *ᴄʜᴀᴛ :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
+                     teks += `𒆜 *ɴᴀᴍᴇ :* ${nama}\n𒆜 *ᴜsᴇʀ :* @${i.split('@')[0]}\n𒆜 *ᴄʜᴀᴛ :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
                  }
                  Jsl.sendTextWithMentions(m.chat, teks, m)
              }
@@ -1776,7 +1776,7 @@ break
                  let teks = `⬣ *ɢʀᴏᴜᴘ ᴄʜᴀᴛ ʟɪsᴛ*\n\nᴛᴏᴛᴀʟ ɢʀᴏᴜᴘ : ${anu.length} ɢʀᴏᴜᴘ\n\n`
                  for (let i of anu) {
                      let metadata = await Jsl.groupMetadata(i)
-                     teks += `🐕 *ɴᴀᴍᴇ :* ${metadata.subject}\n🐕 *ᴏᴡɴᴇʀ :* @${metadata.owner.split('@')[0]}\n🐕 *ɪᴅ :* ${metadata.id}\n🐕 *ᴄʀᴇᴀᴛᴇʀ :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n🐕 *ᴍᴇᴍʙᴇʀs :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                     teks += `𒆜 *ɴᴀᴍᴇ :* ${metadata.subject}\n𒆜 *ᴏᴡɴᴇʀ :* @${metadata.owner.split('@')[0]}\n𒆜 *ɪᴅ :* ${metadata.id}\n𒆜 *ᴄʀᴇᴀᴛᴇʀ :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n𒆜 *ᴍᴇᴍʙᴇʀs :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
                  Jsl.sendTextWithMentions(m.chat, teks, m)
              }
@@ -1798,6 +1798,23 @@ break
                 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
                 let media = await quoted.download()
                 let encmedia = await Jsl.sendVideoAsSticker(m.chat, media, m, { packname: global.packname })
+                await fs.unlinkSync(encmedia)
+            } else {
+                reply(`sᴇɴᴅ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ ${prefix + command}`)
+                }
+            }
+            break
+            case 'take': {
+            if (!quoted) return replay(`Reply Video/Image With Caption ${prefix + command}`)
+            reply(mess.wait)
+                    if (/image/.test(mime)) {
+                let media = await quoted.download()
+                let encmedia = await Jsl.sendImageAsSticker(m.chat, media, m, { packname: ${text })
+                await fs.unlinkSync(encmedia)
+            } else if (/video/.test(mime)) {
+                if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
+                let media = await quoted.download()
+                let encmedia = await Jsl.sendVideoAsSticker(m.chat, media, m, { packname: ${text })
                 await fs.unlinkSync(encmedia)
             } else {
                 reply(`sᴇɴᴅ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ ${prefix + command}`)
@@ -1950,6 +1967,50 @@ break
 	    })
 	    }
 	    break
+	    case 'find': {
+let acr = new acrcloud({
+                    host: 'identify-eu-west-1.acrcloud.com',
+                    access_key: '4dcedd3dc6d911b38c988b872afa7e0d',
+                    access_secret: 'U0PEUg2y6yGVh6NwJra2fJkiE1R5sCfiT6COLXuk'
+                })
+                let q = m.quoted ? m.quoted : m
+      let mime = (q.msg || q).mimetype || ''
+      if (/audio|video/.test(mime)) {
+        let yts = require("yt-search")       
+          let media = await q.download()
+          let ext = mime.split('/')[1]
+          fs.writeFileSync(`./${m.sender}.${ext}`, media)
+          let res = await acr.identify(fs.readFileSync(`./${m.sender}.${ext}`))
+          let { code, msg } = res.status
+          if (code !== 0) throw msg
+          let { title , artists, album, genres, release_date } = res.metadata.music[0]
+          let search = await yts(title)
+          let anu = search.all[0]
+          let buttonMessage = {
+ɪᴍᴀɢᴇ : { url: anu.thumbnail },
+            caption: `
+ᴛɪᴛʟᴇ : ${title}
+
+ᴀʀᴛɪsᴛ : ${artists !== undefined ? artists.map(v => v.name).join(', ') : ''}
+
+ᴀʟʙᴜᴍ : ${album.name || ''}
+
+ɢᴇɴʀᴇ : ${genres !== undefined ? genres.map(v => v.name).join(', ') : ''}
+
+ʀᴇʟᴇsᴇ ᴅᴀᴛᴇ : ${release_date}
+            `,
+            footer: Jsl.user.name,
+            templateButtons: templateButtons = [
+                {index: 1, urlButton: {displayText: 'ᴘʟᴀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ', url: anu.url}},
+                {index: 2, quickReplyButton: {displayText: 'ᴅᴏᴡɴʟᴏᴀᴅ', id:`ytmp3 ${anu.url}` }}],
+            headerType: 4
+        }
+        Jsl.sendMessage(m.chat, buttonMessage, { quoted: m })
+          fs.unlinkSync(`./${m.sender}.${ext}`)
+
+      } else throw '*ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ᴏʀ ᴠɪᴅᴇᴏ*'
+                }
+            break
 	    case 'yts': case 'ytsearch': {
                 if (!text) return replay(`Example : ${prefix + command} Anime Story Whatsapp`)
                 let yts = require("yt-search")
@@ -1998,12 +2059,45 @@ break
         })
         }
         break
+        case 'play': case 'ytplay': case 'song': {
+                if (!text) throw `Example : ${prefix + command} I'm a Barbie Girl`
+                let yts = require("yt-search")
+                let search = await yts(text+'song')
+                let anu = search.all[0]
+                let buttonMessage = {
+                    image: { url: anu.thumbnail },
+                    caption: `
+╭───────────────┈⬡
+│ 𒆜 ᴛɪᴛᴇʟ : ${anu.title}
+│ 𒆜 ᴇxᴛ : Search
+│ 𒆜 ɪᴅ : ${anu.videoId}
+│ 𒆜 sɪᴢᴇ : ${anu.timestamp}
+│ 𒆜 ᴠɪᴇᴡᴇs : ${anu.views}
+│ 𒆜 ᴜᴘʟᴏᴀᴅᴇᴅ ᴅᴀᴛᴇ : ${anu.ago}
+│ 𒆜 ᴀᴜᴛʜᴏʀ : ${anu.author.name}
+│ 𒆜 ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
+│ 𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
+│ 𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
+╰───────────────┈
+`,
+                    footer: Jsl.user.name,
+                    templateButtons: templateButtons = [
+                        {index: 1, urlButton: {displayText: 'ᴄʜᴀɴɴᴇʟ', url: anu.author.url}},
+                        {index: 2, urlButton: {displayText: 'ᴘʟᴀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ', url: anu.url}},
+                        {index: 3, quickReplyButton: {displayText: '🎧 ᴀᴜᴅɪᴏ 🎧', id:`ytmp3 ${anu.url}` }},
+                        {index: 4, quickReplyButton: {displayText: '📽 ᴠɪᴅᴇᴏ 📽', id:`ytmp4 ${anu.url}` }},
+                    ],
+                    headerType: 4
+                }
+                Jsl.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+        break
 	    case 'ytmp3': case 'ytaudio':{
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
                 let quality = args[1] ? args[1] : '256kbps'
                 let media = await yta(text, quality)
-                conn.sendMessage(m.chat,{text : 'ᴜᴘʟᴏᴀᴅɪɴɢ.....'})
+                Jsl.sendMessage(m.chat,{text : 'ᴜᴘʟᴏᴀᴅɪɴɢ.....'})
                 
                 const songBuffer = await (await fetch(media.dl_link)).buffer();
                 const coverBuffer = await (await fetch(media.thumb)).buffer();
@@ -2020,7 +2114,7 @@ break
                 const taggedSongBuffer = Buffer.from(writer.arrayBuffer);
                 fs.writeFileSync(out, taggedSongBuffer);
 
-                await conn.sendMessage(m.chat, { audio: fs.readFileSync(out), mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })                    
+                await Jsl.sendMessage(m.chat, { audio: fs.readFileSync(out), mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })                    
                             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
@@ -2265,7 +2359,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
-                if (!text) return reply(`Enter Text, Example : ${prefix + command} Xeon`)
+                if (!text) return reply(`Enter Text, Example : ${prefix + command} jsl`)
                 reply(mess.wait)
                 Jsl.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
@@ -2569,7 +2663,7 @@ case 'webtonsearch': case 'webtoon':
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ig') {
-                    if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
+                    if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephjsl13`)
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
                     Jsl.sendMedia(m.chat, anu.caption.profile_hd, '', `𒆜 Full Name : ${anu.caption.full_name}\n𒆜 User Name : ${anu.caption.user_name}\n𒆜 ID ${anu.caption.user_id}\n𒆜 Following : ${anu.caption.followers}\n𒆜 Followers : ${anu.caption.following}\n𒆜 Bussines : ${anu.caption.bussines}\n𒆜 Professional : ${anu.caption.profesional}\n𒆜 Verified : ${anu.caption.verified}\n𒆜 Private : ${anu.caption.private}\n𒆜 Bio : ${anu.caption.biography}\n𒆜 Bio Url : ${anu.caption.bio_url}`, m)
@@ -2966,11 +3060,11 @@ reply(`ʙɢᴍ ᴀᴅᴇᴅᴅ ғᴏʀ '${text}'
 	    case 'ping': {
                 let { performance } = require('perf_hooks')
                 let old = performance.now()
-                await conn.sendMessage(m.chat,{text :`ᴛᴇsᴛɪɴɢ ᴘɪɴɢ`})
+                await Jsl.sendMessage(m.chat,{text :`ᴛᴇsᴛɪɴɢ ᴘɪɴɢ`})
                 let neww = performance.now()
                 let speed = neww - old
                 y = Math.ceil(speed)
-                await conn.sendMessage(m.chat,{text :`ᴘɪɴɢ ${y} ᴍs`})
+                await Jsl.sendMessage(m.chat,{text :`ᴘɪɴɢ ${y} ᴍs`})
             }
         break
 	    case 'anonymous': {
@@ -3097,7 +3191,7 @@ reply(`ʙɢᴍ ᴀᴅᴇᴅᴅ ғᴏʀ '${text}'
                 reply('ᴡᴏʀᴄᴋ ᴛʏᴘᴇ ᴄʜᴀɴɢᴇᴅ ᴛᴏ ᴘʀɪᴠᴀᴛᴇ')
             }
             break
-            case 'ping': case 'botstatus': case 'statusbot': {
+            case 'ram': case 'botstatus': case 'statusbot': {
                 const used = process.memoryUsage()
                 const cpus = os.cpus().map(cpu => {
                     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
@@ -3208,7 +3302,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
+                            jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
                             hydratedFooterText: `
 ╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :-@${pushname}─⬡
 │   
@@ -4035,6 +4129,70 @@ await Jsl.send5ButImg(from, `` + '' + ' ', `
 ᴀɴᴅ ɴᴇᴡ ᴅᴇᴠᴏʟᴏᴘᴇʀs sᴏᴏɴ 
 ᴛʜᴇɴ ᴡᴀɪᴛ ɢᴀʏᴢ!`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
 break
+case 'update' :{
+                const simpleGit = require('simple-git')
+                const git = simpleGit();
+                    await git.fetch();
+                        var commits = await git.log(['master' + '..origin/' + 'master']);
+                    if (commits.total === 0) {
+                        await Jsl.sendMessage(m.chat,{text:'*```You have the latest version installed```*'})    
+                    } else {
+                        var availupdate = '*ᴜᴘᴅᴀᴛᴇs ᴀᴠᴀɪʟᴀʙʟᴇ* \n\n'+'```';
+                        commits['all'].map(
+                        (commit) => { 
+                        availupdate += '●  '+ commit.message +'\n'});
+                        let buttons = [
+                            { buttonId: 'update now', buttonText: { displayText: 'ᴜᴘᴅᴀᴛᴇ ʙᴏᴛ' }, type: 1 },
+                        ]
+                        await Jsl.sendButtonText(m.chat, buttons, availupdate + '```', Jsl.user.name)
+                        
+                    }}                       
+                    
+
+
+                
+
+
+            
+            break
+            case 'update now':{
+                const Heroku = require('heroku-client');
+                const heroku = new Heroku({ token: HEROKU.API })
+                const simpleGit = require('simple-git')
+                const git = simpleGit();
+                await git.fetch();
+                        var commits = await git.log([BRANCH + '..origin/' + BRANCH]);
+                        if (commits.total === 0) {
+                            return await Jsl.sendMessage(m.chat,{text:'*```ʏᴏᴜ..ʜᴀᴠᴇ...ᴀʟʀᴇᴅʏ..ᴜᴘᴅᴀᴛᴇᴅ...*```'})   
+                        } else {
+                               
+
+                                    var app = await heroku.get('/apps/' + HEROKU.NAME)
+                                    await Jsl.sendMessage(m.chat,{text:'*ᴜᴘᴅᴀᴛɪɴɢ...*'})
+                                
+                                    /*await Jsl.sendMessage(m.chat,{text:'```Invalid Heroku Credentials```'})
+                                    await new Promise(r => setTimeout(r, 1000));
+                                    return await Jsl.sendMessage(m.chat,{text:'```Please give correct credentials```'})*/
+                                
+                    
+                                git.fetch('upstream', BRANCH);
+                                git.reset('hard', ['FETCH_HEAD']);
+                    
+                                var git_url = app.git_url.replace(
+                                    "https://", "https://api:" + HEROKU.API + "@"
+                                )
+                                
+                                try {
+                                    await git.addRemote('heroku', git_url);
+                                } catch { console.log('heroku remote ekli'); }
+                                await git.push('heroku', BRANCH);
+                    
+                                await Jsl.sendMessage(m.chat,{text:'*ʙᴏᴛ ᴜᴘᴅᴀᴛᴇᴅ...*'})
+                    
+                                await Jsl.sendMessage(m.chat,{text:'ʀᴇsᴛᴀʀᴛɪɴɢ...'})
+                                
+                         
+                        }}            
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
