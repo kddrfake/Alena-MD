@@ -2015,7 +2015,8 @@ case 'play': case 'song': {
 │𒆜 ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
 │𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
 │𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
-╰───────────────┈⬡`,
+╰───────────────┈⬡
+`
 message = await prepareWAMessageMedia({ image : { url: search.videos[0].thumbnail } }, { upload:   Turbo.waUploadToServer })
                 template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
