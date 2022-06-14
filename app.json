@@ -4,6 +4,17 @@
   "repository": "https://github.com/Afx-Abu/Alena-MD",
   "logo": "https://i.imgur.com/xzhFxw0.jpeg",
   "keywords": ["bot","whatsapp","whatsapp-bot"],
+    "env": {
+"APP_NAME": {
+  "description": "HEROKU APP NAME",
+  "required": true
+},
+"HEROKU_API": {
+  "description": "HEROKU API KEY",
+  "required": true
+}
+
+},
 "buildpacks": [
     {
       "url": "heroku/nodejs"
