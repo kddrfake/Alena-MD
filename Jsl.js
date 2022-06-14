@@ -1998,38 +1998,6 @@ break
         })
         }
         break
-case 'play': case 'song': case 'ytplay': {
-                if (!text) return reply(`Example : ${prefix + command} Stay`)
-                let yts = require("yt-search")
-                let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '𝙰𝚄𝙳𝙸𝙾🎶'}, type: 1},
-                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '𝚅𝙸𝙳𝙴𝙾📽️'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
-                    caption: `
-
-╭───────────────┈⬡
-│ 𒆜 ᴛɪᴛᴇʟ : ${anu.title}
-│ 𒆜 ᴇxᴛ : Search
-│ 𒆜 ɪᴅ : ${anu.videoId}
-│ 𒆜 sɪᴢᴇ : ${anu.timestamp}
-│ 𒆜 ᴠɪᴇᴡᴇs : ${anu.views}
-│ 𒆜 ᴜᴘʟᴏᴀᴅᴇᴅ ᴅᴀᴛᴇ : ${anu.ago}
-│ 𒆜 ᴀᴜᴛʜᴏʀ : ${anu.author.name}
-│ 𒆜 ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
-│ 𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
-│ 𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
-╰───────────────┈`,
-                    footer: 'ᴜsᴇʀ:- ${pushname}'
-                    buttons: buttons,
-                    headerType: 4
-                }
-                Jsl.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
 	    case 'ytmp3': case 'ytaudio':{
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
