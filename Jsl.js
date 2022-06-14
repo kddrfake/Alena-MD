@@ -2004,8 +2004,6 @@ case 'play': case 'song': case 'ytplay': {
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 let buttons = [
-                    {buttonId: `urlButton: {displayText: 'ᴄʜᴀɴɴᴇʟ', url: anu.author.url}},
-                    {buttonId: `urlButton: {displayText: 'ᴘʟᴀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ', url: anu.url}},
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '𝙰𝚄𝙳𝙸𝙾🎶'}, type: 1},
                     {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '𝚅𝙸𝙳𝙴𝙾📽️'}, type: 1}
                 ]
@@ -2024,8 +2022,8 @@ case 'play': case 'song': case 'ytplay': {
 │ 𒆜 ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
 │ 𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
 │ 𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
-╰───────────────┈⬡`,
-                    footer: Jsl.user.name,
+╰───────────────┈`,
+                    footer: 'ᴜsᴇʀ:- ${pushname}'
                     buttons: buttons,
                     headerType: 4
                 }
