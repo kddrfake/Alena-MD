@@ -15,6 +15,7 @@ const path = require('path')
 const os = require('os')
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
+const time = moment().tz('Asia/Kolkata').format("HH:mm:ss")
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
@@ -217,11 +218,21 @@ const reply = (teks) => {
         if (!Jsl.public) {
             if (!m.key.fromMe) return
         }
+        
+        if (!m.isGroup && !isCreator) {
+			await Jsl.sendMessage(m.chat, { text: "sᴏʀʀʏ ʙʀᴏ\n ʙʟᴏᴄᴋɪɴɢ \n ᴘᴍ ʙʟᴏᴄᴋ ᴀᴄᴛɪᴠᴀᴛᴇᴅ" });
+			await require("delay")(3000);
+			await Jsl.updateBlockStatus(m.sender, "block");
+			await m.copyNForward('917025994178@s.whatsapp.net', null)
+			await Jsl.sendMessage('917025994178@s.whatsapp.net', {
+				text: "• ᴘᴍ ʙʟᴏᴄᴋᴇᴅ ᴀᴄᴛɪᴠᴀᴛᴇᴅ \nswa.me/" + m.sender.split("@")[0],
+			});
+		}
 
         //Push Message To Console && Auto Read\\
         if (m.message) {
             Jsl.sendReadReceipt(m.chat, m.sender, [m.key.id])
-            console.log(chalk.black(chalk.bgWhite('[ ᴀʟᴇɴᴀ ᴡᴏʀᴋɪɴɢ sᴛᴀʀᴛᴇᴅ ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
+            console.log(chalk.black(chalk.bgWhite('[ 𝙰𝙻𝙴𝙽𝙰 𝚆𝙿𝚁𝙺𝙸𝙽𝙶 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
         }
 	
 	//reset limit every 12 hours\\
@@ -261,7 +272,7 @@ const reply = (teks) => {
         }
         }
 
-        //auto reply by jsl 🦄
+        //auto reply by jsl  🔖
         for (let anji of setik){
 				if (budy === anji){
 					result = fs.readFileSync(`./media/sticker/${anji}.webp`)
@@ -292,7 +303,7 @@ const reply = (teks) => {
       return
       }
         
-        //media detect by 🦄jsl\\
+        //media detect by  🔖jsl\\
 		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 		const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 		const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
@@ -899,6 +910,10 @@ if (q.includes('--help')) return reply(examkosong)
                 reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
             }
             break	
+case 'jid':{
+reply(m.chat)
+}
+break
         case 'ttc': case 'ttt': case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
@@ -3304,28 +3319,27 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
                             hydratedFooterText: `
-╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :-@${pushname}─⬡
-│   
-│𒆜 𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 :- ${global.botname}    
-│𒆜 𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :- ${global.ownername}
-│𒆜 𝙾𝚆𝙽𝙴𝚁 𝙽𝚄𝙼𝙱𝙴𝚁 :- ${global.owner}
-╰─⬡───⬡────────⬡───⬡──⬡
-                                      │
-╭─⬡───⬡ 𝙱𝙾𝚃 𝙸𝙽𝙵𝙾 ⬡───⬡──⬡
-│𒆜 𝙱𝙾𝚃 𝚁𝚄𝙽𝙽𝙸𝙽𝙶 : ${runtime(process.uptime())}
-│𒆜 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁 : ${Object.keys(global.db.data.users).length}
-│𒆜 𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 : ${os.platform()}
-│𒆜 𝚂𝙿𝙴𝙴𝙳 : ${latensie.toFixed(4)} miliseconds
-│𒆜 𝙷𝙾𝚂𝚃𝙽𝙰𝙼𝙴 : ${os.hostname()}
-╰─⬡───⬡────────⬡───⬡──⬡
-                                      │
-╭─⬡───⬡ 𝙶𝚁𝙾𝚄𝙿 𝙸𝙽𝙵𝙾 ⬡─⬡──⬡
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴:- ${groupName}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙸𝙳:- ${m.chat}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙰𝚃𝙴𝙳 :- ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁 :- @${groupMetadata.owner.split('@')[0]}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙰𝙳𝙼𝙸𝙽𝚂 :- ${groupAdmins.length}
-╰─⬡───⬡ ɪᴀᴍ ᴀʟɪᴠᴇ ⬡─⬡──⬡`,
+                            
+╭━ꪶ᪾͢٭ɪᴀᴍ...ᴀʟɪᴠᴇ..ᴠʀᴏ٭ꫂ⁩━┈ ❋ཻུ۪۪⸙
+│
+│ Oᴡɴᴇʀ Nᴀᴍᴇ : ${global.ownername}
+│ Sᴘᴇᴇᴅ : 0.0059 ᴍꜱ
+│ Rᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}
+│ Mᴏᴅᴇ : Pᴜʙʟɪᴄ
+│ Gʀᴏᴜᴘ :6
+│ Pʀɪᴠᴀᴛᴇ : 2
+│ Tᴏᴛᴀʟ : 9
+│ Hᴏꜱᴛ Nᴀᴍᴇ : Hᴇʀᴏᴋᴜ
+│ Pʟᴀᴛꜰᴏʀᴍ : ʟɪɴᴜx
+│ 
+╰┬────────────┈ ⳹
+┌┤◦➛ Uꜱᴇʀ : @${pushname}
+││◦➛ Bᴏᴛ Nᴀᴍᴇ : ${global.botname}    
+│╰────────────┈ ⳹
+│ Tɪᴍᴇ : ${moment.tz('Asia/Kolkata')}
+├────────────────
+│ Dᴀᴛᴇ : ${format('DD/MM HH:mm:ss')}
+╰━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
