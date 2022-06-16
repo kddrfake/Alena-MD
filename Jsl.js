@@ -221,16 +221,6 @@ const reply = (teks) => {
             if (!m.key.fromMe) return
         }
         
-        if (!m.isGroup && !isCreator) {
-			await Jsl.sendMessage(m.chat, { text: "sᴏʀʀʏ ʙʀᴏ\n ʙʟᴏᴄᴋɪɴɢ \n ᴘᴍ ʙʟᴏᴄᴋ ᴀᴄᴛɪᴠᴀᴛᴇᴅ" });
-			await require("delay")(3000);
-			await Jsl.updateBlockStatus(m.sender, "block");
-			await m.copyNForward('917025994178@s.whatsapp.net', null)
-			await Jsl.sendMessage('917025994178@s.whatsapp.net', {
-				text: "• ᴘᴍ ʙʟᴏᴄᴋᴇᴅ ᴀᴄᴛɪᴠᴀᴛᴇᴅ \nwa.me/" + m.sender.split("@")[0],
-			});
-		}
-
         //Push Message To Console && Auto Read\\
         if (m.message) {
             Jsl.sendReadReceipt(m.chat, m.sender, [m.key.id])
