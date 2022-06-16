@@ -3362,7 +3362,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 break
-case 'allmenu': {
+case 'menu': {
   	anu = `
  ╭─❏ ᴍɪsᴄ ❏
  │ 𝙰𝙵𝙺
@@ -3603,8 +3603,8 @@ case 'allmenu': {
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: `${pushname}`,
-                                    id: `${prefix}owner`
+                                    displayText: '💗 𝙼𝙴𝙽𝚄 🔖',
+                                    id: `${prefix}menu`
                                 }
                             }]
                         }
