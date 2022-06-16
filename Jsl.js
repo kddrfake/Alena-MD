@@ -2140,7 +2140,7 @@ let acr = new acrcloud({
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Jsl.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜 Title : ${media.title}\n𒆜 File Size : ${media.filesizeF}\n𒆜 Url : ${isUrl(text)}\n𒆜 Ext : MP3\n𒆜 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                Jsl.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜 ᴛɪᴛʟᴇ : ${media.title}\n𒆜 ᴠɪᴅᴇᴏ sɪᴢᴇ : ${media.filesizeF}\n𒆜 ᴜʀʟ : ${isUrl(text)}\n𒆜 ᴇxᴛ : ᴠɪᴅᴇᴏ\n𒆜 ʀᴇsᴏʟᴏᴛɪᴏɴ : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
