@@ -3603,7 +3603,7 @@ case 'allmenu': {
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '💗${pushname}',
+                                    displayText: `${pushname}`,
                                     id: `${prefix}owner`
                                 }
                             }]
