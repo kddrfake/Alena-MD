@@ -3361,9 +3361,137 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 break
-case 'menu': {
+case 'command': {
+let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                listMessage :{
+                    title: `Hi ${pushname}`,
+                    description: `Please Choose The Menu\n\n`,
+                    buttonText: "Menu",
+                    footerText: `${global.footer}`,
+                    listType: "SINGLE_SELECT",
+                    sections: [{
+								"title": "Main Features",
+								"rows": [
+									{
+										"title": "Main Menu",
+										"description": "Displays The List Of Main Features",
+										"rowId": `${prefix}mainmenu`
+									}
+								]
+							},
+							{
+								"title": "Bot Features",
+								"rows": [
+									{
+										"title": "All Menu",
+										"description": "Displays The List Of All The Features!",
+										"rowId": `${prefix}allmenu`
+									},
+									{
+										"title": "Owner Menu",
+										"description": "Displays The List Of Owner Features",
+										"rowId": `${prefix}ownermenu`
+										},
+									{
+										"title": "Group Menu",
+										"description": "Displays The List Of Main Features",
+										"rowId": `${prefix}groupmenu`
+										},
+									{
+										"title": "Rpg Menu",
+										"description": "Displays The List Of Rpg Features",
+										"rowId": `${prefix}rpgmenu`
+									},
+									{
+										"title": "Download Menu",
+										"description": "Displays The List Of Download Features",
+										"rowId": `${prefix}downloadmenu`
+									},
+									{
+										"title": "Search Menu",
+										"description": "Displays The List Of Searching Features",
+										"rowId": `${prefix}searchmenu`
+									},
+									{
+											"title": "Random Menu",
+										"description": "Displays The List Of Random Features",
+										"rowId": `${prefix}randommenu`
+										},
+										{
+											"title": "Random Anime Menu",
+										"description": "Displays The List Of Random Anime Features",
+										"rowId": `${prefix}randomanimemenu`
+										},
+										{
+											"title": "Fun Menu",
+										"description": "Displays The List Of Fun Features",
+										"rowId": `${prefix}funmenu`
+										},
+										{
+											"title": "Convert Menu",
+										"description": "Displays The List Of Convert Features",
+										"rowId": `${prefix}convertmenu`
+										},
+										{
+											"title": "Database Menu",
+										"description": "Displays The List Of Database Features",
+										"rowId": `${prefix}databasemenu`
+										},
+										{
+											"title": "Voice Changer Menu",
+										"description": "Displays The List Of Voice Changing Features",
+										"rowId": `${prefix}voicechangermenu`
+										},
+										{
+											"title": "Islamic Menu",
+										"description": "Displays The List Of Islamic Features",
+										"rowId": `${prefix}islamicmenu`
+										},
+										{
+											"title": "Horoscope Menu",
+										"description": "Displays The List Of Horoscope Features",
+										"rowId": `${prefix}horoscopemenu`
+										}
+								]
+							},
+							{
+								"title": "Chat With Fellow Users",
+								"rows": [
+									{
+										"title": "Anonymous Chat Menu",
+										"description": "Displays The List Of Anonymous Chat Features",
+										"rowId": `${prefix}anonymouschatmenu`
+									}
+								]
+							},
+							{
+								"title": "Credit",
+								"rows": [
+									{
+										"title": "Thanks To",
+										"description": "Displays The List Of Credit Of The Bot !!",
+										"rowId": `${prefix}tqtt`
+									}
+								]
+							}
+						],
+          listType: 1
+                }
+            }), {})
+            Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            }
+            break
+    case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
+                reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alena-MD\n\nɪɴsᴛᴀ : ${myweb}`)
+            }
+            break
+            case 'sc': case 'git': {
+                reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alena-MD\n\nɪɴsᴛᴀ : ${myweb}`)
+            }
+            break
+case 'allmenu': {
   	anu = `
- ╭─❏ ᴍɪsᴄ ❏
+ ╭─❏ *${botname}* ❏
  │ 𝙰𝙵𝙺
  │ 𝙰𝙻𝙸𝚅𝙴
  │ 𝚂𝙴𝚃𝙲𝙼𝙳
@@ -3587,681 +3715,7 @@ case 'menu': {
  ╰─────────────────
  ╭─❏ ᴛᴇxᴛ ❏
  │ 𝚅𝙼𝙴𝙽𝚄
- ╰─────────────────
-    const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: anu,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
-                            hydratedFooterText: Jsl.user.name,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
-                                    id: `${prefix}owner`
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat })
-                Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-break
-case 'command': {
-let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                listMessage :{
-                    title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu\n\n`,
-                    buttonText: "Menu",
-                    footerText: `${global.footer}`,
-                    listType: "SINGLE_SELECT",
-                    sections: [{
-								"title": "Main Features",
-								"rows": [
-									{
-										"title": "Main Menu",
-										"description": "Displays The List Of Main Features",
-										"rowId": `${prefix}mainmenu`
-									}
-								]
-							},
-							{
-								"title": "Bot Features",
-								"rows": [
-									{
-										"title": "All Menu",
-										"description": "Displays The List Of All The Features!",
-										"rowId": `${prefix}allmenu`
-									},
-									{
-										"title": "Owner Menu",
-										"description": "Displays The List Of Owner Features",
-										"rowId": `${prefix}ownermenu`
-										},
-									{
-										"title": "Group Menu",
-										"description": "Displays The List Of Main Features",
-										"rowId": `${prefix}groupmenu`
-										},
-									{
-										"title": "Rpg Menu",
-										"description": "Displays The List Of Rpg Features",
-										"rowId": `${prefix}rpgmenu`
-									},
-									{
-										"title": "Download Menu",
-										"description": "Displays The List Of Download Features",
-										"rowId": `${prefix}downloadmenu`
-									},
-									{
-										"title": "Search Menu",
-										"description": "Displays The List Of Searching Features",
-										"rowId": `${prefix}searchmenu`
-									},
-									{
-											"title": "Random Menu",
-										"description": "Displays The List Of Random Features",
-										"rowId": `${prefix}randommenu`
-										},
-										{
-											"title": "Random Anime Menu",
-										"description": "Displays The List Of Random Anime Features",
-										"rowId": `${prefix}randomanimemenu`
-										},
-										{
-											"title": "Fun Menu",
-										"description": "Displays The List Of Fun Features",
-										"rowId": `${prefix}funmenu`
-										},
-										{
-											"title": "Convert Menu",
-										"description": "Displays The List Of Convert Features",
-										"rowId": `${prefix}convertmenu`
-										},
-										{
-											"title": "Database Menu",
-										"description": "Displays The List Of Database Features",
-										"rowId": `${prefix}databasemenu`
-										},
-										{
-											"title": "Voice Changer Menu",
-										"description": "Displays The List Of Voice Changing Features",
-										"rowId": `${prefix}voicechangermenu`
-										},
-										{
-											"title": "Islamic Menu",
-										"description": "Displays The List Of Islamic Features",
-										"rowId": `${prefix}islamicmenu`
-										},
-										{
-											"title": "Horoscope Menu",
-										"description": "Displays The List Of Horoscope Features",
-										"rowId": `${prefix}horoscopemenu`
-										}
-								]
-							},
-							{
-								"title": "Chat With Fellow Users",
-								"rows": [
-									{
-										"title": "Anonymous Chat Menu",
-										"description": "Displays The List Of Anonymous Chat Features",
-										"rowId": `${prefix}anonymouschatmenu`
-									}
-								]
-							},
-							{
-								"title": "Credit",
-								"rows": [
-									{
-										"title": "Thanks To",
-										"description": "Displays The List Of Credit Of The Bot !!",
-										"rowId": `${prefix}tqtt`
-									}
-								]
-							}
-						],
-          listType: 1
-                }
-            }), {})
-            Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-            break
-    case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alena-MD\n\nɪɴsᴛᴀ : ${myweb}`)
-            }
-            break
-            case 'sc': case 'git': {
-                reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alena-MD\n\nɪɴsᴛᴀ : ${myweb}`)
-            }
-            break
-case 'allmenu': {
-  	anu = `
-┏━「 *${botname}* 」━━⭓ 
-┃╔═══════✪「 MAIN 」
-┃╠ ${prefix}alive
-┃╠ ${prefix}script
-┃╠ ${prefix}speedtest
-┃╠ ${prefix}ping
-┃╠ ${prefix}owner
-┃╠ ${prefix}menu
-┃╠ ${prefix}delete
-┃╠ ${prefix}chatinfo
-┃╠ ${prefix}quoted
-┃╠ ${prefix}listpc
-┃╠ ${prefix}listgc
-┃╠ ${prefix}donate
-┃╠ ${prefix}report [bug]
-┃╠═══════✪「 OWNER 」	
-┃╠ ${prefix}chat [option]
-┃╠ ${prefix}join [link]
-┃╠ ${prefix}leave
-┃╠ ${prefix}block [user]
-┃╠ ${prefix}unblock [user]
-┃╠ ${prefix}bcgroup [text]
-┃╠ ${prefix}bcall [text]
-┃╠ ${prefix}setppbot [image]
-┃╠ ${prefix}setexif
-┃╠═══════✪「 GROUP 」	        
-┃╠${prefix}grouplink
-┃╠${prefix}ephemeral [option]
-┃╠${prefix}setgcpp [image]
-┃╠${prefix}setname [text]
-┃╠${prefix}setdesc [text]
-┃╠${prefix}group [text]
-┃╠${prefix}editinfo [option]
-┃╠${prefix}add [user]
-┃╠${prefix}kick [reply/tag]
-┃╠${prefix}hidetag [text]
-┃╠${prefix}tagall [text]
-┃╠${prefix}antilink [on/off]
-┃╠${prefix}mute [on/off]
-┃╠${prefix}promote [reply/tag]
-┃╠${prefix}demote [reply/tag]
-┃╠${prefix}vote
-┃╠${prefix}devote
-┃╠${prefix}upvote
-┃╠${prefix}checkvote
-┃╠${prefix}delvote
-┃╠═══════✪「 RPG 」	
-┃╠${prefix}hunting
-┃╠${prefix}mining
-┃╠${prefix}heal
-┃╠${prefix}userlimit
-┃╠${prefix}profile
-┃╠${prefix}inventory
-┃╠${prefix}leaderboard
-┃╠${prefix}buy [option]
-┃╠${prefix}sell [option]
-┃╠═════✪「 DOWNLOADER 」	
-┃╠${prefix}ytmp3 [url|quality]
-┃╠${prefix}ytmp4 [url|quality]
-┃╠${prefix}getmusic [yt link]
-┃╠${prefix}getvideo [yt link]
-┃╠${prefix}umma [query]
-┃╠${prefix}joox [query]
-┃╠${prefix}soundcloud [url]
-┃╠═══════✪「 SEARCHER 」	
-┃╠${prefix}play [query]
-┃╠${prefix}song [query]
-┃╠${prefix}yts [query]
-┃╠${prefix}google [query]
-┃╠${prefix}gimage [query]
-┃╠${prefix}pinterest [query]
-┃╠${prefix}wallpaper [query]
-┃╠${prefix}wikimedia [query]
-┃╠${prefix}ytsearch [query]
-┃╠${prefix}ringtone [query]
-┃╠${prefix}webtoon [query]
-┃╠═══════✪「 RANDOM 」
-┃╠${prefix}coffee
-┃╠${prefix}animequote (indo)
-┃╠${prefix}couplepp
-┃╠════✪「 RANDOM ANIME 」
-┃╠${prefix}loli
-┃╠${prefix}bully
-┃╠${prefix}cuddle
-┃╠${prefix}cry
-┃╠${prefix}hug
-┃╠${prefix}awoo
-┃╠${prefix}kiss
-┃╠${prefix}lick
-┃╠${prefix}pat
-┃╠${prefix}smug
-┃╠${prefix}bonk
-┃╠${prefix}yeet
-┃╠${prefix}blush
-┃╠${prefix}smile
-┃╠${prefix}wave
-┃╠${prefix}highfive
-┃╠${prefix}handhold
-┃╠${prefix}nom
-┃╠${prefix}glomp
-┃╠${prefix}bite
-┃╠${prefix}slap
-┃╠${prefix}kill
-┃╠${prefix}happy
-┃╠${prefix}wink
-┃╠${prefix}poke
-┃╠${prefix}dance
-┃╠${prefix}cringe
-┃╠═══════✪「 FUN 」
-┃╠ ${prefix}how [text
-┃╠ ${prefix}when [text]
-┃╠ ${prefix}is [text]
-┃╠ ${prefix}what [text]
-┃╠ ${prefix}can [text]
-┃╠ ${prefix}rate [text]
-┃╠ ${prefix}wangy [text]
-┃╠ ${prefix}beautifulcheck [tag]
-┃╠ ${prefix}awesomecheck [tag]
-┃╠ ${prefix}prettycheck [tag]
-┃╠ ${prefix}lesbiancheck [tag]
-┃╠ ${prefix}gaycheck [tag]
-┃╠ ${prefix}cutecheck [tag]
-┃╠ ${prefix}uglycheck [tag]
-┃╠ ${prefix}hornycheck [tag]
-┃╠ ${prefix}charactercheck [tag]
-┃╠ ${prefix}lovelycheck [tag]
-┃╠ ${prefix}couple
-┃╠ ${prefix}mysoulmate
-┃╠ ${prefix}hot
-┃╠ ${prefix}sexy
-┃╠ ${prefix}kind
-┃╠ ${prefix}idiot
-┃╠ ${prefix}handsome
-┃╠ ${prefix}beautiful
-┃╠ ${prefix}cute
-┃╠ ${prefix}pretty
-┃╠ ${prefix}lesbian
-┃╠ ${prefix}noob
-┃╠ ${prefix}bastard
-┃╠ ${prefix}foolish
-┃╠ ${prefix}nerd
-┃╠ ${prefix}asshole
-┃╠ ${prefix}gay
-┃╠ ${prefix}smart
-┃╠ ${prefix}stubble
-┃╠ ${prefix}dog
-┃╠ ${prefix}horny
-┃╠ ${prefix}cunt
-┃╠ ${prefix}wibu
-┃╠ ${prefix}tictactoe
-┃╠ ${prefix}delttt
-┃╠ ${prefix}guess [option]
-┃╠ ${prefix}math [mode]
-┃╠ ${prefix}suitpvp [tag]
-┃╠═══════✪「 CONVERTER 」
-┃╠ ${prefix}toimage [reply stick]
-┃╠ ${prefix}sticker [reply img|gif]
-┃╠ ${prefix}emojimix [moji+moji]
-┃╠ ${prefix}tovideo [reply img]
-┃╠ ${prefix}togif [reply stick]
-┃╠ ${prefix}tourl [reply img]
-┃╠ ${prefix}tovn [reply aud]
-┃╠ ${prefix}tomp3 [reply vn]
-┃╠ ${prefix}toaudio [reply vid]
-┃╠ ${prefix}ebinary [reply txt]
-┃╠ ${prefix}dbinary [reply txt]
-┃╠ ${prefix}styletext [text]
-┃╠══════✪「 DATABASE 」
-┃╠ ${prefix}setcmd
-┃╠ ${prefix}listcmd
-┃╠ ${prefix}delcmd
-┃╠ ${prefix}lockcmd
-┃╠ ${prefix}addmsg
-┃╠ ${prefix}listmsg
-┃╠ ${prefix}getmsg
-┃╠ ${prefix}delmsg
-┃╠══✪「 ANONYMOUS CHAT 」
-┃╠${prefix}anonymous
-┃╠${prefix}start
-┃╠${prefix}next
-┃╠${prefix}leave
-┃╠═══✪「 VOICE CHANGER 」
-┃╠${prefix}bass [reply aud]
-┃╠${prefix}blown [reply aud]
-┃╠${prefix}deep [reply aud]
-┃╠${prefix}earrape [reply aud]
-┃╠${prefix}fast [reply aud]
-┃╠${prefix}fat [reply aud]
-┃╠${prefix}nightcore [reply aud]
-┃╠${prefix}reverse [reply aud]
-┃╠${prefix}robot [reply aud]
-┃╠${prefix}slow [reply aud]
-┃╠${prefix}squirrel [reply aud]
-┃╠══════✪「 ISLAMIC 」
-┃╠${prefix}juzamma
-┃╠══════✪「 HOROSCOPE 」
-┃╠${prefix}nomorhoki (indo)
-┃╠${prefix}artimimpi (indo)
-┃╠${prefix}artinama (indo)
-┃╠${prefix}ramaljodoh (indo)
-┃╠${prefix}ramaljodohbali (indo)
-┃╠${prefix}suamiistri (indo)
-┃╠${prefix}ramalcinta (indo)
-┃╠${prefix}cocoknama (indo)
-┃╠${prefix}pasangan (indo)
-┃╠${prefix}jadiannikah (indo)
-┃╠${prefix}sifatusaha (indo)
-┃╠${prefix}rezeki (indo)
-┃╠${prefix}pekerjaan (indo)
-┃╠${prefix}nasib (indo)
-┃╠${prefix}penyakit (indo)
-┃╠${prefix}tarot (indo)
-┃╠${prefix}fengshui (indo)
-┃╠${prefix}haribaik (indo)
-┃╠${prefix}harisangar (indo)
-┃╠${prefix}harisial (indo)
-┃╠${prefix}nagahari (indo)
-┃╠${prefix}arahrezeki (indo)
-┃╠${prefix}peruntungan (indo)
-┃╠${prefix}weton (indo)
-┃╠${prefix}karakter (indo)
-┃╠${prefix}keberuntungan (indo)
-┃╠${prefix}memancing (indo)
-┃╠${prefix}masasubur (indo)
-┃╠${prefix}zodiak (indo)
-┃╠${prefix}shio (indo)
-┃╚═════════════✪
-┗━「 *Created By ${ownername}* 」━⭓`
-    const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: anu,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
-                            hydratedFooterText: `${pushname}`,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
-                                    id: `${prefix}owner`
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat })
-                Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-break
-case 'mainmenu':
-var unicorn = await getBuffer(picak+'Main Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 MAIN 」
-┃╠ ${prefix}alive
-┃╠ ${prefix}script
-┃╠ ${prefix}speedtest
-┃╠ ${prefix}ping
-┃╠ ${prefix}owner
-┃╠ ${prefix}menu
-┃╠ ${prefix}delete
-┃╠ ${prefix}chatinfo
-┃╠ ${prefix}quoted
-┃╠ ${prefix}listpc
-┃╠ ${prefix}listgc
-┃╠ ${prefix}donate
-┃╠ ${prefix}report [bug]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-
-case 'grupmenu': case 'groupmenu':
-var unicorn = await getBuffer(picak+'Group Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 GROUP 」	        
-┃╠${prefix}grouplink
-┃╠${prefix}ephemeral [option]
-┃╠${prefix}setgcpp [image]
-┃╠${prefix}setname [text]
-┃╠${prefix}setdesc [text]
-┃╠${prefix}group [text]
-┃╠${prefix}editinfo [option]
-┃╠${prefix}add [user]
-┃╠${prefix}kick [reply/tag]
-┃╠${prefix}hidetag [text]
-┃╠${prefix}tagall [text]
-┃╠${prefix}antilink [on/off]
-┃╠${prefix}mute [on/off]
-┃╠${prefix}promote [reply/tag]
-┃╠${prefix}demote [reply/tag]
-┃╠${prefix}vote
-┃╠${prefix}devote
-┃╠${prefix}upvote
-┃╠${prefix}checkvote
-┃╠${prefix}delvote
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-
-case 'rpgmenu':
-var unicorn = await getBuffer(picak+'Rpg Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 RPG 」	        
-┃╠${prefix}hunting
-┃╠${prefix}mining
-┃╠${prefix}heal
-┃╠${prefix}limituser
-┃╠${prefix}profile
-┃╠${prefix}inventory
-┃╠${prefix}leaderboard
-┃╠${prefix}buy [option]
-┃╠${prefix}sell [option]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-
-case 'funmenu':
-var unicorn = await getBuffer(picak+'Fun Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 FUN 」	        
-┃╠ ${prefix}how [text
-┃╠ ${prefix}when [text]
-┃╠ ${prefix}is [text]
-┃╠ ${prefix}what [text]
-┃╠ ${prefix}can [text]
-┃╠ ${prefix}rate [text]
-┃╠ ${prefix}wangy [text]
-┃╠ ${prefix}beautifulcheck [tag]
-┃╠ ${prefix}awesomecheck [tag]
-┃╠ ${prefix}prettycheck [tag]
-┃╠ ${prefix}lesbiancheck [tag]
-┃╠ ${prefix}gaycheck [tag]
-┃╠ ${prefix}cutecheck [tag]
-┃╠ ${prefix}uglycheck [tag]
-┃╠ ${prefix}hornycheck [tag]
-┃╠ ${prefix}charactercheck [tag]
-┃╠ ${prefix}lovelycheck [tag]
-┃╠ ${prefix}couple
-┃╠ ${prefix}mysoulmate
-┃╠ ${prefix}hot
-┃╠ ${prefix}sexy
-┃╠ ${prefix}kind
-┃╠ ${prefix}handsome
-┃╠ ${prefix}beautiful
-┃╠ ${prefix}cute
-┃╠ ${prefix}pretty
-┃╠ ${prefix}lesbian
-┃╠ ${prefix}noob
-┃╠ ${prefix}bastard
-┃╠ ${prefix}foolish
-┃╠ ${prefix}nerd
-┃╠ ${prefix}asshole
-┃╠ ${prefix}gay
-┃╠ ${prefix}smart
-┃╠ ${prefix}stubble
-┃╠ ${prefix}dog
-┃╠ ${prefix}horny
-┃╠ ${prefix}cunt
-┃╠ ${prefix}wibu
-┃╠ ${prefix}tictactoe
-┃╠ ${prefix}delttt
-┃╠ ${prefix}guess [option]
-┃╠ ${prefix}math [mode]
-┃╠ ${prefix}suitpvp [tag]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-
-case 'ownermenu':
-var unicorn = await getBuffer(picak+'Owner Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 OWNER 」	        
-┃╠${prefix}grouplink
-┃╠${prefix}ephemeral [option]
-┃╠${prefix}setgcpp [image]
-┃╠${prefix}setname [text]
-┃╠${prefix}setdesc [text]
-┃╠${prefix}group [text]
-┃╠${prefix}editinfo [option]
-┃╠${prefix}add [user]
-┃╠${prefix}kick [reply/tag]
-┃╠${prefix}hidetag [text]
-┃╠${prefix}tagall [text]
-┃╠${prefix}antilink [on/off]
-┃╠${prefix}mute [on/off]
-┃╠${prefix}promote [reply/tag]
-┃╠${prefix}demote [reply/tag]
-┃╠${prefix}vote
-┃╠${prefix}devote
-┃╠${prefix}upvote
-┃╠${prefix}checkvote
-┃╠${prefix}delvote
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-case 'downloadmenu':
-var unicorn = await getBuffer(picak+'Downloader Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═════✪「 DOWNLOADER 」	        
-┃╠${prefix}ytmp3 [url|quality]
-┃╠${prefix}ytmp4 [url|quality]
-┃╠${prefix}getmusic [yt link]
-┃╠${prefix}getvideo [yt link]
-┃╠${prefix}umma [query]
-┃╠${prefix}joox [query]
-┃╠${prefix}soundcloud [url]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-case 'searchmenu':
-var unicorn = await getBuffer(picak+'Search Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 SEARCHER 」	        
-┃╠${prefix}play [query]
-┃╠${prefix}song [query]
-┃╠${prefix}yts [query]
-┃╠${prefix}google [query]
-┃╠${prefix}gimage [query]
-┃╠${prefix}pinterest [query]
-┃╠${prefix}wallpaper [query]
-┃╠${prefix}wikimedia [query]
-┃╠${prefix}ytsearch [query]
-┃╠${prefix}ringtone [query]
-┃╠${prefix}webtoon [query]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-case 'randommenu':
-var unicorn = await getBuffer(picak+'Random Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══════✪「 RANDOM 」	        
-┃╠${prefix}coffee
-┃╠${prefix}animequote (indo)
-┃╠${prefix}couplepp
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-case 'randomanimemenu':
-var unicorn = await getBuffer(picak+'Random Anime Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═════✪「 RANDOM ANIME 」	        
-┃╠${prefix}loli
-┃╠${prefix}bully
-┃╠${prefix}cuddle
-┃╠${prefix}cry
-┃╠${prefix}hug
-┃╠${prefix}awoo
-┃╠${prefix}kiss
-┃╠${prefix}lick
-┃╠${prefix}pat
-┃╠${prefix}smug
-┃╠${prefix}bonk
-┃╠${prefix}yeet
-┃╠${prefix}blush
-┃╠${prefix}smile
-┃╠${prefix}wave
-┃╠${prefix}highfive
-┃╠${prefix}handhold
-┃╠${prefix}nom
-┃╠${prefix}glomp
-┃╠${prefix}bite
-┃╠${prefix}slap
-┃╠${prefix}kill
-┃╠${prefix}happy
-┃╠${prefix}wink
-┃╠${prefix}poke
-┃╠${prefix}dance
-┃╠${prefix}cringe
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
-break
-case 'textpromenu':
-var unicorn = await getBuffer(picak+'Text Pro Menu')
-await Jsl.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═════✪「 TEXT PRO 」	        
-┃╠ ${prefix}3dchristmas [txt]
-┃╠ ${prefix}3ddeepsea [txt]
-┃╠ ${prefix}americanflag [txt]
-┃╠ ${prefix}3dscifi [txt]
-┃╠ ${prefix}3drainbow [txt]
-┃╠ ${prefix}3dwaterpipe [txt]
-┃╠ ${prefix}halloweenskeleton [txt]
-┃╠ ${prefix}sketch [txt]
-┃╠ ${prefix}bluecircuit [txt]
-┃╠ ${prefix}space [txt]
-┃╠ ${prefix}metallic [txt]
-┃╠ ${prefix}fiction [txt]
-┃╠ ${prefix}greenhorror [txt]
-┃╠ ${prefix}transformer [txt]
-┃╠ ${prefix}berry [txt]
-┃╠ ${prefix}thunder [txt]
-┃╠ ${prefix}magma [txt]
-┃╠ ${prefix}3dcrackedstone [txt]
-┃╠ ${prefix}3dneonlight [txt]
-┃╠ ${prefix}impressiveglitch [txt]
-┃╠ ${prefix}naturalleaves [txt]
-┃╠ ${prefix}fireworksparkle [txt]
-┃╠ ${prefix}matrix [txt]
-┃╠ ${prefix}dropwater [txt]
-┃╠ ${prefix}harrypotter [txt]
-┃╠ ${prefix}foggywindow [txt]
-┃╠ ${prefix}neondevils [txt]
-┃╠ ${prefix}christmasholiday [txt]
-┃╠ ${prefix}3dgradient [txt]
-┃╠ ${prefix}blackpink [txt]
-┃╠ ${prefix}gluetext [txt]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
+ ╰─「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
 break
 case 'convertmenu':
 var unicorn = await getBuffer(picak+'Converter Menu')
