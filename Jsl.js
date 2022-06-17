@@ -3588,7 +3588,7 @@ case 'menu': {
  ╭─❏ ᴛᴇxᴛ ❏
  │ 𝚅𝙼𝙴𝙽𝚄
  ╰─────────────────
-     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+    const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
@@ -3602,8 +3602,8 @@ case 'menu': {
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '💗 𝙼𝙴𝙽𝚄 🔖',
-                                    id: `${prefix}menu`
+                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
+                                    id: `${prefix}owner`
                                 }
                             }]
                         }
