@@ -3594,7 +3594,7 @@ case 'menu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
-                            hydratedFooterText: `${pushname}`,
+                            hydratedFooterText: Jsl.user.name,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
