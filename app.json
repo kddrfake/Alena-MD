@@ -2,28 +2,14 @@
   "name": "Alena-MD",
   "description": "whatsapp md bot build with nodejs",
   "repository": "https://github.com/Afx-Abu/Alena-MD",
-  "logo": "https://i.imgur.com/xzhFxw0.jpeg",
-  "keywords": ["bot","whatsapp","whatsapp-bot"],
-    "env": {
-"APP_NAME": {
-  "description": "HEROKU APP NAME",
-  "required": true
-},
-"HEROKU_API": {
-  "description": "HEROKU API KEY",
-  "required": true
-}
-
-},
-"buildpacks": [
+  "logo": "https://github.com/Afx-Abu/Alena-MD",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+  "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
     {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
     },
     {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
