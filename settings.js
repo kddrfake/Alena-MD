@@ -18,19 +18,19 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['918548062392']
-global.premium = ['918548062392']
-global.ownernomer = '918548062392'
-global.ownername = '𝑺𝑶𝑼𝑳 𝑹𝑬𝑩𝑬𝑳'
-global.botname = '𝑹𝑬𝑩𝑬𝑳 𝑺𝑬𝑹 𝑩𝑶𝑻'
-global.caption = 'ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ'
-global.footer = '© sᴇʀ ʀᴇʙᴇʟ ™'
-global.ig = 'https://wa.me/918548062392'
+global.owner = ['94703199484']
+global.premium = ['94703199484']
+global.ownernomer = '94703199484'
+global.ownername = 'DINETH RANDINU'
+global.botname = 'KDDR-FAKE 𝑩𝑶𝑻'
+global.caption = 'KDDR-FAKE'
+global.footer = '© KDDR-FAKE ™'
+global.ig = 'https://wa.me/94703199484'
 global.region = 'kerala'
-global.sc = 'https://github.com/Afx-Abu/Alena-MD'
-global.myweb = 'https://wa.me/918548062392'
-global.packname = '𝑰𝑻𝒁 𝑴𝑬 𝑺𝑶𝑼𝑳 𝑹𝑬𝑩𝑬𝑳'
-global.author = '𝑰𝑻𝒁 𝑴𝑬 𝑺𝑶𝑼𝑳 𝑹𝑬𝑩𝑬𝑳'
+global.sc = 'https://github.com/kddrfake/Alena-MD'
+global.myweb = 'https://wa.me/94703199484'
+global.packname = 'KDDR-FAKE'
+global.author = 'KDDR-FAKE'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
